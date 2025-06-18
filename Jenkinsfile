@@ -8,7 +8,7 @@ pipeline {
         }
         stage('run newman') {
             steps {
-                sh ('newman run /Users/tun/work/ob/test-jenkins/simple-collection.postman_collection.json')
+                sh ('newman run /Users/tun/work/ob/test-jenkins/simple-collection.postman_collection.json -e ob-non-prod.postman_environment.json')
             }
         }
     }
