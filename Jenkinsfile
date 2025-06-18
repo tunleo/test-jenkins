@@ -1,9 +1,14 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+        stage('Prepare') {
             steps {
-                echo 'Hello world 2 !!!' 
+                echo "preparing..."
+            }
+        }
+        stage('run newman') {
+            steps {
+                newman run /Users/tun/work/ob/test-jenkins/simple-collection.postman_collection.json
             }
         }
     }
